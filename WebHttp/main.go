@@ -35,10 +35,10 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func handleRequests() {
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/articles", allArticles)
-	log.Fatal(http.ListenAndServe(":8000", nil))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func main() {
-	fmt.Println("Http Server Listen port 8000")
+	fmt.Println("Http Server Listen port 8080")
 	handleRequests()
 }
