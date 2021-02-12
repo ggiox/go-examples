@@ -3,7 +3,7 @@ package repositories
 import (
 	"log"
 
-	"github.com/ggiox/go-api-example/domain"
+	"ApiGORM/domain"
 	"github.com/jinzhu/gorm"
 )
 

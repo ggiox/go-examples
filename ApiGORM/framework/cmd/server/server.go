@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ggiox/go-examples/ApiGORM/applicatiion/repositories"
-	"github.com/ggiox/go-examples/ApiGORM/domain"
-	"github.com/ggiox/go-examples/ApiGORM/framework/utils"
+	"ApiGORM/applicatiion/repositories"
+	"ApiGORM/domain"
+	"ApiGORM/framework/utils"
 )
 
 func main() {

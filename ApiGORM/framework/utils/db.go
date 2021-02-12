@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/ggiox/go-api-example/domain"
+	"ApiGORM/domain"
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq" // Driver postgres
