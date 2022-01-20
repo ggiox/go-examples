@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+
+  appserver:
+    container_name: example-appserver
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - "1323:1323"
+    networks:
+      - examples
+    #restart: unless-stopped
+
+  postgres:
+    container_name: example-postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-postgres} # Change this password
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+       - .pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - examples
+    #restart: unless-stopped
+  
+  pgadmin:
+    container_name: example-pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin} # Change this password
+    depends_on:
+      - postgres
+    volumes:
+      - .pgadmin:/var/lib/pgadmin
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - examples
+    #restart: unless-stopped
+
+networks:
+  examples:
+    driver: bridge
+
+volumes:
+    pgdata:
+    pgadmin:
