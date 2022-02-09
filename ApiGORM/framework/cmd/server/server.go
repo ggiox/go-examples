@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"ApiGORM/applicatiion/repositories"
+	"ApiGORM/application/repositories"
 	"ApiGORM/domain"
 	"ApiGORM/framework/utils"
 )
