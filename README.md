@@ -1,2 +1,2 @@
 # go-examples
-Exemplos de projetos em GO com o objetivo de aprendizado da linguagem
+Examples of projects in GO with the objective of learning the language
